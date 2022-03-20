@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 int main() {
@@ -31,13 +30,6 @@ int main() {
   }
 
   glfwMakeContextCurrent(window);
-
-  // Initialize GLEW
-  if (glewInit() != GLEW_OK) {
-    std::cerr << "Failed to initialize GLEW" << std::endl;
-    glfwTerminate();
-    return 3;
-  }
 
   // Ensure we can capture the escape key being pressed below
   glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);

@@ -2,7 +2,6 @@ cmake_minimum_required (VERSION 3.16)
 project (Window)
 
 find_package(OpenGL REQUIRED)
-find_package(GLEW REQUIRED)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -19,4 +18,4 @@ add_definitions(
 )
 
 add_executable(window window.cpp)
-target_link_libraries(window OpenGL::GL GLEW glfw)
+target_link_libraries(window OpenGL::GL glfw)
