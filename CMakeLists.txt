@@ -17,6 +17,8 @@ add_library(shader shader/shader.cpp)
 configure_file(shader/vertex_shader shader/vertex_shader)
 configure_file(shader/fragment_shader shader/fragment_shader)
 
+include_directories(external/glew-2.2.0/include)
+
 target_include_directories(shader PRIVATE shader)
 target_include_directories(triangle PRIVATE shader)
 
