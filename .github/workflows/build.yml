@@ -186,15 +186,11 @@ jobs:
             message(FATAL_ERROR "Build failed")
           endif()
 
-      - name: test
-        run: ls build
-
       - name: Install Strip
         run: cmake --install build --prefix instdir --strip
 
       - name: Pack
-        working-directory: instdir
-        run: cmake -E tar cfv ../${{ matrix.config.artifact }} --format=7zip .
+        run: cmake -E tar cfv ../${{ matrix.config.artifact }} build --format=7zip .
 
       - name: Upload
         uses: actions/upload-artifact@v1
