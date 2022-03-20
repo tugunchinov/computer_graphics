@@ -190,7 +190,8 @@ jobs:
         run: cmake --install build --prefix instdir --strip
 
       - name: Pack
-        run: cmake -E tar cfv ../${{ matrix.config.artifact }} build --format=7zip .
+        working-directory: instdir
+        run: ls && cmake -E tar cfv ../${{ matrix.config.artifact }} --format=7zip .
 
       - name: Upload
         uses: actions/upload-artifact@v1
