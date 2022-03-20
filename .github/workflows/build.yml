@@ -187,7 +187,7 @@ jobs:
           endif()
 
       - name: test
-        run: ls
+        run: ls build
 
       - name: Install Strip
         run: cmake --install build --prefix instdir --strip
