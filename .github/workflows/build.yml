@@ -72,7 +72,11 @@ jobs:
           endif()
 
       - name: Install OpenGL
-        run: sudo apt update && sudo apt install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+        run: |
+          if [ "$RUNNER_OS" == "Linux" ]
+          then
+            sudo apt update && sudo apt install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+          fi
 
       - name: Download ccache
         id: ccache
