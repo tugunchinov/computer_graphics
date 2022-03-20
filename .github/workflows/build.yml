@@ -77,7 +77,8 @@ jobs:
         run: |
           if [ "$RUNNER_OS" == "Linux" ]
           then
-            sudo apt update && sudo apt install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libxrandr-dev libxinerama-dev
+            sudo apt update && \
+            sudo apt install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libxrandr-dev libxinerama-dev libxcursor-dev
           fi
         shell: bash
 
