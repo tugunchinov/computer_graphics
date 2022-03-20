@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Triangle)
 
 find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
