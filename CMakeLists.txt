@@ -38,4 +38,4 @@ include_directories(external/glew-2.2.0/include)
 target_include_directories(shader PRIVATE shader)
 target_include_directories(volume PRIVATE shader)
 
-target_link_libraries(volume PUBLIC OpenGL::GL glfw glm shader glew)
+target_link_libraries(volume PUBLIC OpenGL::GL glfw glm shader glew_s)
