@@ -14,6 +14,8 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(external/glfw)
 add_subdirectory(external/glm)
+
+set(GLEW_USE_STATIC_LIBS ON)
 add_subdirectory(external/glew-2.2.0/build/cmake)
 
 add_definitions(
@@ -37,4 +39,4 @@ include_directories(external/glew-2.2.0/include)
 target_include_directories(shader PRIVATE shader)
 target_include_directories(triangle PRIVATE shader)
 
-target_link_libraries(triangle OpenGL::GL glfw glm shader GLEW)
+target_link_libraries(triangle OpenGL::GL glfw glm shader glew)
