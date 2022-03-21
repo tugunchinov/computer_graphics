@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(Triangle)
 
 find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
 
 if (WIN32)
     set(CMAKE_CXX_STANDARD_LIBRARIES "-static-libgcc -static-libstdc++ -lwsock32 -lws2_32 ${CMAKE_CXX_STANDARD_LIBRARIES}")
@@ -29,4 +30,4 @@ include_directories(external/glew-2.2.0/include)
 target_include_directories(shader PRIVATE shader)
 target_include_directories(triangle PRIVATE shader)
 
-target_link_libraries(triangle OpenGL::GL glfw glm shader glew)
+target_link_libraries(triangle OpenGL::GL glfw glm shader GLEW::GLEW)
