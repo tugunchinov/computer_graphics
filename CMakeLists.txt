@@ -14,8 +14,10 @@ add_subdirectory(external/glew-2.2.0/build/cmake)
 add_executable(triangle triangle.cpp)
 add_library(shader shader/shader.cpp)
 
-configure_file(shader/vertex_shader shader/vertex_shader)
-configure_file(shader/fragment_shader shader/fragment_shader)
+configure_file(shader/vertex_shader_1 shader/vertex_shader_1)
+configure_file(shader/vertex_shader_2 shader/vertex_shader_2)
+configure_file(shader/fragment_shader_1 shader/fragment_shader_1)
+configure_file(shader/fragment_shader_2 shader/fragment_shader_2)
 
 include_directories(external/glew-2.2.0/include)
 
