@@ -17,7 +17,6 @@ set (CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 add_subdirectory(external/glfw)
 add_subdirectory(external/glm)
 
-set(GLEW_USE_STATIC_LIBS ON)
 add_subdirectory(external/glew-2.2.0/build/cmake)
 
 add_definitions(
