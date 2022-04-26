@@ -1,0 +1,24 @@
+#version 330 core
+
+layout(location = 0) in vec3 vertexPosition_modelspace;
+layout(location = 1) in vec3 vertexColor;
+layout(location = 2) in vec3 center;
+layout(location = 3) in vec4 quat;
+
+out vec3 fragmentColor;
+uniform mat4 MVP;
+
+
+void main() {
+  vec3 r1 = vec3(quat.y * vertexPosition_modelspace.z - quat.z * vertexPosition_modelspace.y,
+                 quat.z * vertexPosition_modelspace.x - quat.x * vertexPosition_modelspace.z,
+                 quat.x * vertexPosition_modelspace.y - quat.y * vertexPosition_modelspace.z);
+  vec3 r2 = r1 + quat.w * vertexPosition_modelspace;
+
+  vec3 r3 = vec3(quat.y * r1.z - quat.z * r1.y,
+                 quat.z * r1.x - quat.x * r1.z,
+                 quat.x * r1.y - quat.y * r1.z);
+
+  gl_Position =  MVP * vec4(center + vertexPosition_modelspace + r3, 1);
+  fragmentColor = vertexColor;
+}
